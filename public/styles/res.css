@@ -1,0 +1,33 @@
+/* big phones */
+@media screen and (max-width:699px){
+    #big-device{
+        display: block;
+    }
+    #app{
+        display: none;
+    }
+}
+/* small phones */
+@media screen and (max-width:450px){
+    #big-device{
+        display: none;
+    }
+    #app{
+        display: block;
+    }
+}
+/* Tablets */
+@media (min-width: 768px) and (max-width: 1024px){
+    #big-device{
+        display: none;
+    }
+}
+/* laptops */
+@media screen and (min-width:1024px) {
+    #big-device{
+        display: block;
+    }
+    #app{
+        display: none;
+    }
+}

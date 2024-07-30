@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Resource Hub - Main</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- Boxicons -->
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li>
+                <div class="icon active" onclick="openTab('home')">
+                    <i class='bx bxs-home-alt-2'></i>
+                    <p>Home</p>
+                </div>
+            </li>
+            <li>
+                <div class="icon" onclick="openTab('resource')">
+                    <i class='bx bxs-chalkboard'></i>
+                    <p>Resource</p>
+                </div>
+            </li>
+            <li>
+                <div class="icon" onclick="openTab('search')">
+                    <i class='bx bx-search'></i>
+                    <p>Search</p>
+                </div>
+            </li>
+            <li>
+                <div class="icon" onclick="openTab('profile')">
+                    <i class='bx bxs-user'></i>
+                    <p>profile</p>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <header>
+        <div id="user-profile">
+            <div id="profile-picture"></div>
+            <div>
+                <p id="username"></p>
+                <p id="matric-number"></p>
+            </div>
+        </div>
+
+        <div class="headIcon">
+            <a href="search.html"><i class='bx bx-search'></i></a>
+        </div>
+    </header>
+    <section id="home"></section>
+    <section id="resource"></section>
+    <section id="search"></section>
+    <section id="profile"></section>
+   
+    <script src="scripts/demo.js"></script>
+</body>
+</html>
