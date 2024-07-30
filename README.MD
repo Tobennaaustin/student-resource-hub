@@ -1,6 +1,6 @@
 # EduConnect
-# Abeg use mobile view run the code, for now it is not available on laptops.
-# Abeg no mind my code oo, i no sabi. GoodLuck. Toymaker you can help me add Search functionality, then forexlord help me add notification abeg.
+# Please use mobile view to run this code. This version is not available for laptops for now
+
 
 EduConnect is a multipage web application for university students, allowing them to sign up, log in, and access various resources such as course materials, study groups, event calendars, discussion forums, a resource library, tutoring services, career services, announcements, and a contact directory. The application uses JSON Server to simulate a backend for storing user data and resources.
 
