@@ -8,8 +8,7 @@
     <link rel="stylesheet" href="styles/admin.css">
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="styles/res.css">
-    <!-- w3 css -->
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    
     <!-- Boxicons -->
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -42,10 +41,10 @@
                     <h1>Admin</h1>
                 </div>
                 <div class="admin-opensearch">
-                    <input type="button" value="Search" id="myBtn">
+                    <button id="myBtn" style="padding: 5px; background-color: white; border-radius: 5px; border: 2px solid rgba(39, 37, 37, 0.594);"><i class='bx bx-search'></i> Search By Matric Number</button>
                 </div>
                 <div class="admin-logout">
-                    <a href="admin.html">Logout</a>
+                    <a href="admin.html" style="padding: 10px; font-size: 15px; border: none; border-radius: 5px; color: black; background-color: white;"><i class='bx bxs-exit'></i></a>
                 </div>
             </div>
 
@@ -55,8 +54,8 @@
                 <div class="modal-content">
                     <span class="close">&times;</span>
                     <div id="search-section">
-                        <input type="text" id="search-matric" placeholder="Enter matric number">
-                        <button onclick="searchUser()">Search</button>
+                        <input type="text" id="search-matric" placeholder="Enter matric number" style="padding: 5px; background-color: white; border-radius: 5px; border: 2px solid rgba(39, 37, 37, 0.594);">
+                        <button onclick="searchUser()" style="padding: 5px; background-color: white; border-radius: 5px; border: 2px solid rgba(39, 37, 37, 0.594);"><i class='bx bx-search'></i></button>
                     </div>
                     <p id="search-message"></p>
                     <div id="search-result" style="display: none;">
@@ -99,7 +98,7 @@
                         <span class="text">Recent Activity</span>
                     </div>
                     <div class="activity-data">
-                        <table id="users-table" class="w3-table-all w3-hoverable">
+                        <table id="users-table" >
                             <thead>
                                 <tr class="w3-light-blue">
                                     <th>Name</th>
@@ -122,7 +121,7 @@
                     </div>
                     <div class="addmatric-form">
                         <input type="text" id="new-matric" placeholder="Enter Matric Number">
-                        <button onclick="addMatricNumber()">Add</button>
+                        <button onclick="addMatricNumber()"><i class='bx bx-plus-circle'></i>Add</button>
                         <p id="add-message"></p>
                     </div>
                 </div>
