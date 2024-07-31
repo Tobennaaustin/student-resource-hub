@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin page</title>
     <link rel="stylesheet" href="styles/admin.css">
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/res.css">
     <!-- w3 css -->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <!-- Boxicons -->
@@ -14,10 +16,11 @@
     <!-- Iconscout CSS -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 </head>
+
 <body>
-    <div id="app">
+    <div id="Admin-app">
         <div id="login-section">
-            <div id="admin-login-form" >
+            <div id="admin-login-form">
                 <h1>Welcome Admin</h1>
                 <div class="form-element">
                     <label for="name">Name</label>
@@ -28,26 +31,42 @@
                     <input type="password" id="admin-password" placeholder="Enter admin password">
                 </div>
 
-                <button  onclick="checkPassword()">Login</button>
+                <button onclick="checkPassword()">Login</button>
                 <p id="login-message"></p>
             </div>
         </div>
 
-        <div id="admin-section"  style="display:none;">
+        <div id="admin-section" style="display:none;">
             <div class="admin-header">
                 <div class="adminlogo">
                     <h1>Admin</h1>
                 </div>
-
-                <div class="admin-search">
-                    <input type="text" id="search-bar" placeholder="Search by Matric Number" oninput="searchUsers()">
-                    <p id="search-message"></p>
+                <div class="admin-opensearch">
+                    <input type="button" value="Search" id="myBtn">
                 </div>
                 <div class="admin-logout">
                     <a href="admin.html">Logout</a>
                 </div>
             </div>
-            
+
+            <!-- search modal -->
+            <div id="myModal" class="modal">
+
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <div id="search-section">
+                        <input type="text" id="search-matric" placeholder="Enter matric number">
+                        <button onclick="searchUser()">Search</button>
+                    </div>
+                    <p id="search-message"></p>
+                    <div id="search-result" style="display: none;">
+                        <h3>User Details</h3>
+                        <ul id="user-details"></ul>
+                    </div>
+                </div>
+
+            </div>
+
             <div class="admin-dash">
                 <div class="admin-dash-head">
                     <i class="uil uil-tachometer-fast-alt"></i>
@@ -108,11 +127,12 @@
                     </div>
                 </div>
             </div>
-            
+
         </div>
-        
+
     </div>
 
     <script src="scripts/admin.js"></script>
 </body>
+
 </html>

@@ -53,24 +53,24 @@ async function deleteUser(userId) {
 }
 
 // Function to search users by matric number
-function searchUsers() {
-    const searchValue = document.getElementById('search-bar').value.toLowerCase();
-    const usersTable = document.getElementById('users-table').getElementsByTagName('tbody')[0];
-    let found = false;
+// function searchUsers() {
+//     const searchValue = document.getElementById('search-bar').value.toLowerCase();
+//     const usersTable = document.getElementById('users-table').getElementsByTagName('tbody')[0];
+//     let found = false;
 
-    for (let i = 0; i < usersTable.rows.length; i++) {
-        const row = usersTable.rows[i];
-        const matricNumber = row.cells[2].textContent.toLowerCase();
-        if (matricNumber.includes(searchValue)) {
-            row.style.display = '';
-            found = true;
-        } else {
-            row.style.display = 'none';
-        }
-    }
+//     for (let i = 0; i < usersTable.rows.length; i++) {
+//         const row = usersTable.rows[i];
+//         const matricNumber = row.cells[2].textContent.toLowerCase();
+//         if (matricNumber.includes(searchValue)) {
+//             row.style.display = '';
+//             found = true;
+//         } else {
+//             row.style.display = 'none';
+//         }
+//     }
 
-    document.getElementById('search-message').textContent = found ? '' : 'User Not Found';
-}
+//     document.getElementById('search-message').textContent = found ? '' : 'User Not Found';
+// }
 
 // Function to add a matric number to the authmatric array
 async function addMatricNumber() {
@@ -129,3 +129,69 @@ async function countAuthMatric() {
 }
 
 countAuthMatric();
+
+// search modal code
+
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+// Search functionality
+async function searchUser() {
+    const matric = document.getElementById('search-matric').value.trim();
+    const searchMessage = document.getElementById('search-message');
+    if (matric == "") {
+        alert('Please enter a matric number.');
+        searchMessage.style.display = "none";
+        return;
+    }
+
+    try {
+        const response = await fetch('http://localhost:3000/users');
+        const users = await response.json();
+
+        const user = users.find(u => u.matric === matric);
+        const searchResultSection = document.getElementById('search-result');
+        const userDetails = document.getElementById('user-details');
+
+        userDetails.innerHTML = '';
+
+        if (user) {
+            // User found
+            searchMessage.textContent = '';
+            searchResultSection.style.display = 'block';
+
+            userDetails.innerHTML = `
+                <li><strong>Name:</strong> ${user.name}</li>
+                <li><strong>Level:</strong> ${user.level}</li>
+                <li><strong>Matric Number:</strong> ${user.matric}</li>
+                <li><button onclick="deleteUser('${user.id}')">Delete User</button></li>
+            `;
+        } else {
+            // User not found
+            searchResultSection.style.display = 'none';
+            searchMessage.textContent = 'User not found';
+            searchMessage.style.color = 'red';
+        }
+    } catch (error) {
+        console.error('Error fetching users:', error);
+    }
+}
