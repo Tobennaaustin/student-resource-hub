@@ -194,5 +194,5 @@ async function searchUser() {
         }
     } catch (error) {
         console.error('Error fetching users:', error);
-    }
+    } 
 }

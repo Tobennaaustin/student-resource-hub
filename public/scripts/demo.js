@@ -8,6 +8,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     const users = await response.json();
 
     const user = users.find(user => user.matric === matric);
+    if(!user){
+      window.location.href= "signup.html";  /* This made sure that no one will be able to jump any link */
+    }
     if (user) {
         const usernameElement = document.getElementById('username');
         const matricNumberElement = document.getElementById('matric-number');
