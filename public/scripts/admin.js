@@ -161,7 +161,7 @@ async function searchUser() {
     const searchMessage = document.getElementById('search-message');
     if (matric == "") {
         alert('Please enter a matric number.');
-        searchMessage.style.display = "none";
+        searchResultSection.style.display = 'none';
         return;
     }
 
