@@ -1,5 +1,5 @@
 # EduConnect
-# Please use mobile view to run this code. This version is not available for laptops for now
+# Please use mobile view to run this code. This version is not available for laptops for now thankyou
 
 
 EduConnect is a multipage web application for university students, allowing them to sign up, log in, and access various resources such as course materials, study groups, event calendars, discussion forums, a resource library, tutoring services, career services, announcements, and a contact directory. The application uses JSON Server to simulate a backend for storing user data and resources.
